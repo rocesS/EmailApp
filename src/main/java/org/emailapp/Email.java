@@ -8,6 +8,7 @@ public class Email {
     private String password;
     private String department;
     private int mailboxCapacity;
+    private int defaultPasswordLength = 10;
     private String alternateEmail;
 
     //konstruktor dla firstName i lastName/constructor for firstName and lastName
@@ -21,7 +22,8 @@ public class Email {
         System.out.println("Department: " + this.department);
 
         //metoda generujaca random haslo/ call method that returns random password
-
+        this.password = randomPassword(defaultPasswordLength);
+        System.out.println("Your password is: " + this.password);
 
     }
 
@@ -38,14 +40,14 @@ public class Email {
     }
 
     //generate random password
-    private String randomPassword(int lenght) {
+    private String randomPassword(int length) {
         String passwordSet = "AaBbCcDdEeFfGgHhIjKkLlMmNnOpRrSsTtUuWwQqXxYyZz1234567890!@#$%^&*()";
-        char[] password = new char[lenght];
-        for (int i = 0; i < lenght; i++) {
-            int rand = (int) Math.random() * passwordSet.length();
+        char[] password = new char[length];
+        for (int i = 0; i < length; i++) {
+            int rand = (int) (Math.random() * passwordSet.length());
             password[i] = passwordSet.charAt(rand);
         }
-        return new String (password);
+        return new String(password);
 
     }
 
