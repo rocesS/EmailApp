@@ -38,20 +38,16 @@ public class Email {
     }
 
     //generate random password
-    private String randomPassword(int lenght){
+    private String randomPassword(int lenght) {
         String passwordSet = "AaBbCcDdEeFfGgHhIjKkLlMmNnOpRrSsTtUuWwQqXxYyZz1234567890!@#$%^&*()";
         char[] password = new char[lenght];
-        for (int i=0; i<lenght; i++) {
+        for (int i = 0; i < lenght; i++) {
             int rand = (int) Math.random() * passwordSet.length();
             password[i] = passwordSet.charAt(rand);
         }
-
-
-
+        return new String (password);
 
     }
-
-
 
 
 }
